@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AccessiVoice</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 320px;
+      min-height: 400px;
+      background: #0a0a0f;
+      color: #e8e0d0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      padding: 20px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #2a2a3a;
+    }
+    .logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #00b4d8, #0077b6);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    h1 { font-size: 18px; font-weight: 700; color: #00b4d8; }
+    .subtitle { font-size: 11px; color: #888; margin-top: 2px; }
+    .status-card {
+      background: #12121a;
+      border: 1px solid #2a2a3a;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .mic-btn {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00b4d8, #0077b6);
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .mic-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,180,216,0.4); }
+    .status-text { font-size: 13px; color: #aaa; }
+    .wake-word { color: #00b4d8; font-weight: 600; }
+    .commands-section h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .command-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .cmd-btn {
+      background: #12121a;
+      border: 1px solid #2a2a3a;
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: #e8e0d0;
+      font-size: 11px;
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cmd-btn:hover { border-color: #00b4d8; background: #1a1a2a; }
+    .footer {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid #2a2a3a;
+      font-size: 10px;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">🎙️</div>
+    <div>
+      <h1>AccessiVoice</h1>
+      <div class="subtitle">Voice-powered web accessibility</div>
+    </div>
+  </div>
+  <div class="status-card">
+    <button class="mic-btn" id="micBtn">🎙️</button>
+    <div class="status-text">Say <span class="wake-word">"Hey Vision"</span> to activate</div>
+  </div>
+  <div class="commands-section">
+    <h3>Quick Commands</h3>
+    <div class="command-grid">
+      <button class="cmd-btn">📖 Read page</button>
+      <button class="cmd-btn">📝 Summarize</button>
+      <button class="cmd-btn">🔍 Describe images</button>
+      <button class="cmd-btn">⬆️ Scroll up</button>
+      <button class="cmd-btn">⬇️ Scroll down</button>
+      <button class="cmd-btn">⬅️ Go back</button>
+    </div>
+  </div>
+  <div class="footer">AccessiVoice v1.1.0 • Wake word: "Hey Vision"</div>
+  <script src="popup.js"></script>
+</body>
+</html>
